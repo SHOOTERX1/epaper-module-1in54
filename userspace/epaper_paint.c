@@ -62,7 +62,8 @@ struct epd_paint *epdpaint_init_with_exist_image_array(
 
 void epdpaint_release(struct epd_paint *paint)
 {
-    free(paint->frame_buffer);
+    if(paint)
+        free(paint->frame_buffer);
     free(paint);
 }
 
